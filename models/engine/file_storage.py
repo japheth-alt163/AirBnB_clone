@@ -5,9 +5,10 @@ Module for FileStorage class.
 
 import json
 
+
 class FileStorage:
     """
-    FileStorage class for serializing instances to a JSON file and deserializing JSON file to instances.
+    FileStorage class for serializing instances
     """
     __file_path = "file.json"
     __objects = {}
@@ -35,7 +36,7 @@ class FileStorage:
 
     def reload(self):
         """
-        Deserialize the JSON file to __objects (only if the JSON file (__file_path) exists).
+        Deserialize the JSON file to __objects
         """
         try:
             with open(self.__file_path, 'r', encoding='utf-8') as file:

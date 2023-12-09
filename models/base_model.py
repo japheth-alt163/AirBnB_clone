@@ -6,6 +6,7 @@ Module for BaseModel class.
 import uuid
 from datetime import datetime
 
+
 class BaseModel:
     """
     BaseModel class for storing common attributes/methods.
@@ -26,19 +27,19 @@ class BaseModel:
 
     def __str__(self):
         """
-        Return a string representation of the BaseModel.
+        Return a string
         """
         return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
         """
-        Update the public instance attribute updated_at with the current datetime.
+        Update the public instance attribute
         """
         self.updated_at = datetime.now()
 
     def to_dict(self):
         """
-        Return a dictionary containing all keys/values of __dict__ of the instance.
+        Return a dictionary
         """
         obj_dict = self.__dict__.copy()
         obj_dict["__class__"] = self.__class__.__name__

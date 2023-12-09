@@ -8,6 +8,7 @@ from models.base_model import BaseModel
 from models.user import User
 from models.engine.file_storage import FileStorage
 
+
 class HBNBCommand(cmd.Cmd):
     """
     Console class
@@ -139,6 +140,7 @@ class HBNBCommand(cmd.Cmd):
 
         setattr(objects[obj_key], arg_list[2], arg_list[3])
         objects[obj_key].save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
