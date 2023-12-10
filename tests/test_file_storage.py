@@ -22,14 +22,10 @@ class TestFileStorage(unittest.TestCase):
 
     def tearDown(self):
         """Tear down method to clean up test environment"""
-        try:
+        if os.path.exists('file.json'):
             os.remove('file.json')
-        except FileNotFoundError:
-            pass
-        try:
+        if os.path.exists('tempfile.json'):
             os.rename('tempfile.json', 'file.json')
-        except FileNotFoundError:
-            pass
 
     def test_file_path(self):
         """Test the default file path"""

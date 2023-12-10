@@ -37,4 +37,11 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(self.place.name, "")
 
     def test_description_attribute(self):
-        """Test the existence and type of description
+        """Test the existence and type of description attribute"""
+        self.assertTrue(hasattr(self.place, 'description'))
+        self.assertIsInstance(self.place.description, str)
+        self.assertEqual(self.place.description, "")
+
+
+if __name__ == '__main__':
+    unittest.main()

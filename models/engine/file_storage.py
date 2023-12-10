@@ -1,5 +1,6 @@
 import json
 import sys
+from models.base_model import BaseModel  # Add this line
 
 class FileStorage:
     """
