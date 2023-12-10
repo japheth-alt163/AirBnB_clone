@@ -1,48 +1,49 @@
-#!/usr/bin/python3
-"""
-Module for FileStorage class.
-"""
-
 import json
-
+import sys
 
 class FileStorage:
     """
-    FileStorage class for serializing instances
+    FileStorage class for serializing instances to a JSON file and deserializing JSON file to instances.
     """
-    __file_path = "file.json"
-    __objects = {}
+    _file_path = "file.json"
+    _objects = {}
 
-    def all(self):
+    @classmethod
+    def all(cls):
         """
-        Return the dictionary __objects.
+        Return the dictionary _objects.
         """
-        return self.__objects
+        return cls._objects
 
-    def new(self, obj):
+    @classmethod
+    def new(cls, obj):
         """
-        Set in __objects the obj with key <obj class name>.id.
+        Set in _objects the obj with key <obj class name>.id.
         """
         key = "{}.{}".format(obj.__class__.__name__, obj.id)
-        self.__objects[key] = obj
+        cls._objects[key] = obj
 
-    def save(self):
+    @classmethod
+    def save(cls):
         """
-        Serialize __objects to the JSON file (path: __file_path).
+        Serialize _objects to the JSON file (path: _file_path).
         """
-        with open(self.__file_path, 'w', encoding='utf-8') as file:
-            obj_dict = {key: obj.to_dict() for key, obj in self.__objects.items()}
+        with open(cls._file_path, 'w', encoding='utf-8') as file:
+            obj_dict = {key: obj.to_dict() for key, obj in cls._objects.items()}
             json.dump(obj_dict, file)
 
-    def reload(self):
+    @classmethod
+    def reload(cls):
         """
-        Deserialize the JSON file to __objects
+        Deserialize the JSON file to _objects (only if the JSON file (_file_path) exists).
         """
         try:
-            with open(self.__file_path, 'r', encoding='utf-8') as file:
+            with open(cls._file_path, 'r', encoding='utf-8') as file:
                 obj_dict = json.load(file)
                 for key, obj in obj_dict.items():
                     class_name, obj_id = key.split('.')
-                    self.__objects[key] = globals()[class_name](**obj)
-        except FileNotFoundError:
+                    obj_class = getattr(sys.modules[__name__], class_name)
+                    cls._objects[key] = obj_class(**obj)
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            # Handle the error (e.g., log it or raise a more specific exception)
             pass
