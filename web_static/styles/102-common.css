@@ -1,0 +1,22 @@
+/* Common Styles */
+
+body {
+  font-size: 14px;
+  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #484848;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+/* Add your responsive styles here */
+@media only screen and (max-width: 600px) {
+  /* Example: Adjust styles for screens smaller than 600px */
+  body {
+    font-size: 12px;
+  }
+}

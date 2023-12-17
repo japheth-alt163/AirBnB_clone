@@ -1,0 +1,31 @@
+/* Header Styles */
+
+header {
+  background-color: #FF0000;
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid #CCCCCC;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+  background-image: url('../images/logo.png');
+  background-size: cover;
+}
+
+/* Add your responsive styles here */
+@media only screen and (max-width: 600px) {
+  header {
+    padding: 0 10px;
+  }
+
+  .logo {
+    height: 30px;
+    width: 30px;
+  }
+}

@@ -1,0 +1,66 @@
+/* Filters Styles */
+.filters {
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+/* Locations and Amenities Styles */
+.locations,
+.amenities {
+  height: 100%;
+  width: 25%;
+  border-right: 1px solid #DDDDDD;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Title Styles */
+h3 {
+  font-weight: 600;
+}
+
+/* Subtitle Styles */
+h4 {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* Popover Styles */
+.popover {
+  display: none;
+  position: absolute;
+  background-color: #FAFAFA;
+  width: 100%;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.locations:hover .popover,
+.amenities:hover .popover {
+  display: block;
+}
+
+/* Location Level 1 Styles */
+.popover > li > h2 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Location Level 2 Styles */
+.popover > li > ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.popover > li > ul > li {
+  margin-bottom: 5px;
+}

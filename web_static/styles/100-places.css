@@ -1,0 +1,122 @@
+/* Places Styles */
+.places {
+  margin-top: 30px;
+}
+
+/* Article Styles */
+article {
+  width: 390px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #FF5A5F;
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Place Name Styles */
+h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
+/* Price by Night Styles */
+.price_by_night {
+  font-size: 30px;
+  color: #FF5A5F;
+  border: 4px solid #FF5A5F;
+  border-radius: 4px;
+  min-width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Information Styles */
+.information {
+  height: 80px;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  display: flex;
+  align-items: center;
+}
+
+/* Information Items Styles */
+.max_guest,
+.number_rooms,
+.number_bathrooms {
+  width: 100px;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* User Styles */
+.user {
+  margin: 10px 0;
+}
+
+/* Description Styles */
+.description {
+  margin-top: 10px;
+}
+
+/* Amenities Styles */
+.amenities {
+  margin-top: 40px;
+}
+
+/* Amenities Title Styles */
+.amenities h2 {
+  font-size: 16px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+/* Amenities List Styles */
+.amenities ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Amenities Item Styles */
+.amenities li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Reviews Styles */
+.reviews {
+  margin-top: 40px;
+}
+
+/* Reviews Title Styles */
+.reviews h2 {
+  font-size: 16px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+/* Reviews List Styles */
+.reviews ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Reviews Item Styles */
+.reviews li {
+  margin-bottom: 20px;
+}
+
+/* Reviews User/Date Styles */
+.reviews h3 {
+  font-size: 14px;
+}
+
+/* Reviews Text Styles */
+.reviews p {
+  font-size: 12px;
+}
